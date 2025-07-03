@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url(drawing.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+nav {
+    background-color: hsla(0, 0%, 100%, 0.135);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li {
+    height: 50px;
+}
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: hsl(30, 100%, 50%);
+}
+nav a:hover {
+   background-color: #f0f0f06d; 
+}
+nav li:first-child {
+    font-size: 35px;
+    font-weight: bold;
+    margin-right: auto;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: hsla(0, 0%, 100%, 0.135);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.menu-button{
+    display: none;
+}
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+.honeyfunny{
+    color: hsl(36, 100%, 60%);
+    font-size: 100px;
+    text-align: center top;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px hsl(50, 97%, 14%);
+}
+#fileInput {
+    display: none;
+}
+
+.custom-file-button {
+    background-color: hsl(36, 100%, 50%);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 7.5px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    height: 35px; /* Set a fixed height */
+    margin: 0 15px; /* Add some spacing on the sides */
+}
+
+.custom-file-button:hover {
+    background-color: hsl(36, 100%, 45%);
+}
+#uploadBtn{
+    padding: 10px 20px;
+    background-color: hsl(36, 100%, 50%);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: inline-block;
+}
+#uploadBtn:hover{
+    background-color: hsl(36, 100%, 45%);
+}
+#dropzone {
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    border: 2px dashed hsl(54, 100%, 50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px auto;
+    transition: 0.3s;
+}
+#dropzone p {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+#dropzone:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#dropzone.dragover {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: hsl(54, 100%, 40%);
+}
+#fileInput {
+    display: none;
+}
+#preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    max-width: 500px;
+    background-color: white;
+    border: 2px solid hsl(54, 100%, 40%);
+    border-radius: 10px;
+    margin: 20px auto;
+}
+.preview-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
