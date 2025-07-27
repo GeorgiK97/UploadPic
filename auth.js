@@ -1,9 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("./user");
-require("dotenv").config();
-
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI)
 const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET;
 

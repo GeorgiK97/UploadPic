@@ -1,3 +1,4 @@
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const multer = require("multer");
@@ -6,8 +7,8 @@ const { S3Client } = require("@aws-sdk/client-s3");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const connectDB = require('./db');
-require("dotenv").config();
-
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI);
 const authRoutes = require("./auth");
 const authMiddleware = require("./middleware");
 
